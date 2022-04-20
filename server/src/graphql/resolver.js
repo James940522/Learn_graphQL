@@ -41,7 +41,7 @@ const resolvers = {
       chattingLog.push(newChat); //소스 상단의 채팅 배열(날아감) -> 추후 prisma 추가 필요
       pubsub.publish(NEW_CHAT, {
         newChat,
-      }); //← — ) 가 없습니다
+      });
       return 'YES';
     },
     addPerson: (_, {name, position}) => {
