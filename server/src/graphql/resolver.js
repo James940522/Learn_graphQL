@@ -1,4 +1,4 @@
-import {PubSub} from 'apollo-server';
+import { PubSub } from 'graphql-subscriptions' ;   
 
 import movies from '../database/movies';
 import chattingLog from '../database/chattingLog';
@@ -60,7 +60,7 @@ const resolvers = {
   },
   Subscription: {
     newChat: {
-      subscribe: (_, __, {pubsub}) => pubsub.asyncIterator(NEW_CHAT),
+      subscribe: () => pubsub.asyncIterator([NEW_CHAT]),
     },
   },
 };
